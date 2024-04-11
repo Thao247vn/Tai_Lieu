@@ -1,0 +1,38 @@
+*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+#slideshow{
+	width:80%;
+	height:700px;
+	margin:10px auto;
+	overflow:hidden;
+	position:relative;
+}
+#slideshow .slide{
+	width:100%;
+	position:absolute;
+	top:0;
+	left:0;
+	/* Đưa hết tất cả hình ra ngoài khung slideshow */
+	/*transform:translateX(100%);*/
+	/* Cho transition-duration kế thừa từ thẻ cha, transition duration của thẻ cha sẽ được gán trong JS*/
+	transition-duration:inherit;
+	transition-property:transform;
+	transform:scale(0);
+}
+#slideshow .slide.current{
+	/*transform:translateX(0);*/
+	z-index:2;
+	transform:scale(1) rotate(360deg);
+}
+#slideshow .slide.next{
+	/*transform:translateX(0);*/
+	z-index:2;
+	transform:scale(1) rotate(360deg);
+}
+#slideshow .slide.prev{
+	/*transform:translateX(-100%);*/	
+	transform:scale(1) rotate(0deg);
+}
